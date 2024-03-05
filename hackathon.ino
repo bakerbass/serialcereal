@@ -1,6 +1,3 @@
-// const int FSR_PIN = A0; // FSR and 100K resistor connected to A0
-// int fsrReading;         // the analog reading from the FSR resistor divider
-
 class Sensor {
   /*
   Sensor class has a few key parameters:
@@ -100,7 +97,7 @@ void setup() {
   ASS.setup(A0, 60);
   Bowl1.setup(A1, 76, 1);
   Bowl2.setup(A2, 80, 1);
-  Bowl3.  setup(A3, 53, 1);
+  Bowl3.setup(A3, 53, 1);
 }
 
 void loop() {
@@ -108,20 +105,8 @@ void loop() {
   ASS.readSensorMN();
   Bowl1.readSensorMN();
   Bowl2.readSensorMN();
-  Bowl3.  readSensorMN();
+  Bowl3.readSensorMN();
   while (usbMIDI.read()) {} //ignore input value
   delay(100); // Delay between readings for stability
   // should avoid using delay, can cause MIDI issues
 }
-// template <size_t max_sensors>
-// class SensorManager
-// {
-
-// }
-// struct fsr {
-//     const int PIN;
-//     int reading;
-//     int MNN;
-//     bool isOn;
-// };
-// struct fsr ASS = {A0, 0, 60};
